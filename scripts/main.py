@@ -3,9 +3,23 @@ import re
 import pprint
 import random
 import os
+import os.path
 import webbrowser
 import playsound
 import time
+
+
+def FolderMake(directory) :
+    try :
+        if not os.path.exists(directory) :
+            os.makedirs(directory)
+    except OSError :
+        print('Error: Creating data path. ' + directory)
+
+
+FolderMake('./data/')
+
+data_folder = os.path.join("scripts", "data")
 
 obj = JarvisAI.JarvisAssistant()
 
@@ -16,9 +30,9 @@ def t2s(text):
 
 
 while True:
-    res = obj.mic_input()
+    res = input()
 
-    if Hibernating == True and re.search('hey jarvis', res):
+    if Hibernating == True and re.search('jarvis', res):
       Hibernating=False
 # and Hibernating == False:
 
@@ -43,7 +57,7 @@ while True:
         t2s("Ok then ")
         Hibernating = True
 
-   if res == 'so do i' and Hibernating == False :
+    if res == 'so do i' and Hibernating == False :
         print("I'm glad we both agree")
         t2s("Im glad we both agree")
         Hibernating = True
@@ -52,7 +66,6 @@ while True:
         print("I'm glad we both agree")
         t2s("Im glad we both agree")
         Hibernating = True
-
 
     if re.search('tell me about', res) and Hibernating == False :
         term = res.replace("tell", "", 1)
@@ -196,7 +209,7 @@ while True:
         response = random.choice(li)
         print(f"{response}")
         t2s(f"{response}")
-        playsound.playsound('C:/Users/muham/PycharmProjects/SimpleAI/library/Crowd-laughing.mp3', True)
+        playsound.playsound('library/Crowd-laughing.mp3', True)
         Hibernating = True
 
     if re.search('how are you', res) and Hibernating == False :
@@ -239,28 +252,65 @@ while True:
         t2s("I am also your friend")
         Hibernating = True
 
+    if re.search('my name is', res) and Hibernating == False :
+        my = res.replace("my", "", 1)
+        nname = my.replace("name", "", 1)
+        isst = nname.replace("is", "", 1)
+        iss = isst.replace(" ", "", 1)
+        name = iss
+        namedata = open('data1s.bat', 'w')
+        namedata.write(name)
+        namedata.close()
+        os.replace("data1s.bat", "data/data1s.bat")
+        print("Got it," + name)
+        t2s("Got it," + name)
+        Hibernating = True
+
+    if re.search('what is my name', res) and Hibernating == False :
+        try :
+            heck = open('data/data1s.bat', 'r')
+            for line in heck :
+             nameload = line
+            print("Your name is" + nameload)
+            t2s("Your name is" + nameload)
+            Hibernating = True
+            heck.close()
+        except NameError:
+            NameErno = True
+        except FileNotFoundError:
+            print("You haven't told me your name.")
+            t2s("You haven't told me your name.")
+            Hibernating = True
+
+
+
     if re.search('play', res) and Hibernating == False :
         dict_sound = {
-            'laugh': 'C:/Users/muham/PycharmProjects/SimpleAI/library/Crowd-laughing.mp3',
-            'cat vibing': 'C:/Users/muham/PycharmProjects/SimpleAI/library/Cat_Vibing.mp3',
-            'day and night' : 'C:/Users/muham/PycharmProjects/SimpleAI/library/day_n_nite_remix.mp3'
+            'laugh': 'library/Crowd-laughing.mp3',
+            'cat vibing': 'library/Cat_Vibing.mp3',
+            'day and night' : 'library/day_n_nite_remix.mp3'
         }
+
 
 
         sound = res.split(' ', 1)[1]
         path = dict_sound.get(sound)
         if path is None:
-            pathx = 'C:/Users/muham/PycharmProjects/SimpleAI/library/'
+         try:
+            pathx = 'library/'
             pathz = res.replace("play", "", 1)
             pathy = pathz.replace(" ", "", 1)
             path = pathx+pathy+('.mp3')
-            soundx = path.replace("C:/Users/muham/PycharmProjects/SimpleAI/library/", "", 1)
+            soundx = path.replace("library/", "", 1)
             sound = soundx.replace(".mp3", "", 1)
             print('Playing: ' + sound)
             t2s('Playing: ' + sound)
             playsound.playsound(path)
             musicpath=False
             Hibernating = True
+         except playsound.PlaysoundException :
+             print("Uh oh, I can't find the mp3 file.. Please check you have it.")
+             t2s("Uh oh, I can't find the mp3 file.. Please check you have it.")
         else:
             print('Playing: ' + sound)
             t2s('Playing: ' + sound)
