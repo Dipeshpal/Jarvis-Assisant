@@ -48,36 +48,39 @@ if re.search('weather|temperature', res) and Hibernating == False:
  
  # After importing playsound create a folder called "library" in the root of the project, insert your mp3 files and use the following code:
  
- #     if re.search('play', res)  :
+      if re.search('play', res)  :
  #  This dict_sound library is used if you would like to manually add a nickname for the mp3 file.
- # You will need to replace the path with your own.
         dict_sound = {
-            'laugh': 'pathto/library/Crowd-laughing.mp3',
-            'cat vibing': 'pathto/library/Cat_Vibing.mp3',
-            'day and night' : 'pathto/library/day_n_nite_remix.mp3'
+            'laugh': 'library/Crowd-laughing.mp3',
+            'cat vibing': 'library/Cat_Vibing.mp3',
+            'day and night' : 'library/day_n_nite_remix.mp3'
         }
+
 
 
         sound = res.split(' ', 1)[1]
         path = dict_sound.get(sound)
         if path is None:
-        # Change pathx to the path of your library folder
-            pathx = 'C:/Users/muham/PycharmProjects/SimpleAI/library/'
+         try:
+            pathx = 'library/'
             pathz = res.replace("play", "", 1)
             pathy = pathz.replace(" ", "", 1)
             path = pathx+pathy+('.mp3')
-         # Again change the path of soundx to the path of your library folder.
-            soundx = path.replace("C:/Users/muham/PycharmProjects/SimpleAI/library/", "", 1)
+            soundx = path.replace("library/", "", 1)
             sound = soundx.replace(".mp3", "", 1)
             print('Playing: ' + sound)
             t2s('Playing: ' + sound)
             playsound.playsound(path)
             musicpath=False
             Hibernating = True
+         except playsound.PlaysoundException :
+             print("Uh oh, I can't find the mp3 file.. Please check you have it.")
+             t2s("Uh oh, I can't find the mp3 file.. Please check you have it.")
         else:
             print('Playing: ' + sound)
             t2s('Playing: ' + sound)
             playsound.playsound(path)
+            Hibernating = True
 
 # That's it! You're done. Congratulations on getting a mp3 player!
 
