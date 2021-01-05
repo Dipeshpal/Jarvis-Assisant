@@ -43,11 +43,15 @@ while True:
         t2s("Ok then ")
         Hibernating = True
 
-    if res == 'so do i' or res == 'i think also' and Hibernating == False :
-        print("I'm glad we both agree")
+   if res == 'so do i' and Hibernating == False :
         print("I'm glad we both agree")
         t2s("Im glad we both agree")
-        Hibernating = Tru0
+        Hibernating = True
+
+    if res == 'i think also' and Hibernating == False :
+        print("I'm glad we both agree")
+        t2s("Im glad we both agree")
+        Hibernating = True
 
 
     if re.search('tell me about', res) and Hibernating == False :
