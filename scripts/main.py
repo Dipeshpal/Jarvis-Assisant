@@ -30,7 +30,7 @@ def t2s(text):
 
 
 while True:
-    res = input()
+    res = obj.mic_input()
 
     if Hibernating == True and re.search('jarvis', res):
       Hibernating=False
