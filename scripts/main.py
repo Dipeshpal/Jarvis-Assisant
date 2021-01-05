@@ -47,7 +47,7 @@ while True:
     if re.search('news', res) and Hibernating == False:
         news_res = obj.news()
         pprint.pprint(news_res)
-        t2s(f"I have found {len(news_res)} news. You can read it. Let me tell you first 2 news articles")
+        t2s(f"I have found {len(news_res)} news articles. You can read them. Let me tell you first 2 news articles")
         t2s(news_res[0])
         t2s(news_res[1])
         Hibernating = True
@@ -266,7 +266,7 @@ while True:
         t2s("Got it," + name)
         Hibernating = True
 
-    if re.search('what is my name', res) and Hibernating == False :
+    if re.search("what is my name|whats my name|what's my name", res) and Hibernating == False :
         try :
             heck = open('data/data1s.bat', 'r')
             for line in heck :
@@ -290,8 +290,6 @@ while True:
             'cat vibing': 'library/Cat_Vibing.mp3',
             'day and night' : 'library/day_n_nite_remix.mp3'
         }
-
-
 
         sound = res.split(' ', 1)[1]
         path = dict_sound.get(sound)
@@ -331,6 +329,11 @@ while True:
         t2s("So am I, how about you ask me what I can do?")
         Hibernating = True
 
+    if re.search('you are nice', res) and Hibernating == False :
+        print("Thank you, I appreciate it.")
+        t2s("Thank you, I appreciate it.")
+        Hibernating = True
+
     if res == "i'm bored" and Hibernating == False :
         print("So am I, how about you ask me what I can do?")
         t2s("So am I, how about you ask me what I can do?")
@@ -339,21 +342,31 @@ while True:
     if re.search('turn off|go away|i hate you|leave me alone|shutdown', res) and Hibernating == False :
         obj.shutdown()
 
-    if re.search('what can you do|what else can you do', res) and Hibernating == False :
+
+    def cmds():
         li_commands = {
-            "open websites": "Example: 'open youtube",
-            "time": "Example: 'what time is it?'",
-            "date": "Example: 'what date is it?'",
-            "launch applications": "Example: 'launch chrome'",
-            "tell me": "Example: 'tell me about India'",
-            "weather": "Example: 'what weather/temperature in Mumbai?'",
-            "news": "Example: 'Show me news for today' ",
+            "open websites" : "Example: 'open youtube",
+            "time" : "Example: 'what time is it?'",
+            "date" : "Example: 'what date is it?'",
+            "launch applications" : "Example: 'launch chrome'",
+            "tell me" : "Example: 'tell me about India'",
+            "weather" : "Example: 'what weather/temperature in Mumbai?'",
+            "news" : "Example: 'Show me news for today' ",
             "joke" : "Example: 'Tell me a joke!' ",
         }
         ans = """I can do lots of things, for example you can ask me time, date, weather in your city,
-        I can open webs
-        ites for you, launch application and even make you laugh! See the list of commands-"""
+     I can open webs
+     ites for you, launch application and even make you laugh! See the list of commands-"""
         print(ans)
         pprint.pprint(li_commands)
         t2s(ans)
+        cmds()
         Hibernating = True
+
+    if re.search('what can you do|what else can you do', res) and Hibernating == False :
+        cmds()
+
+    if res == 'help'  and Hibernating == False :
+     print("No problem, I'm at your service.")
+     t2s("No problem, I'm at your service.")
+     cmds()
