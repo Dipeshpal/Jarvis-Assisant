@@ -13,6 +13,18 @@ def t2s(text):
 while True:
     res = obj.mic_input()
 
+    if re.search('setup|set up', res):
+        setup = obj.setup()
+        print(setup)
+
+    if re.search('google photos', res):
+        photos = obj.show_google_photos()
+        print(photos)
+
+    if re.search('local photos', res):
+        photos = obj.show_me_my_images()
+        print(photos)
+
     if re.search('weather|temperature', res):
         city = res.split(' ')[-1]
         weather_res = obj.weather(city=city)
