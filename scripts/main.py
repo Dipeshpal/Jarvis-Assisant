@@ -1,3 +1,4 @@
+
 import JarvisAI
 import re
 import pprint
@@ -107,7 +108,6 @@ while True:
         print(open_result)
         Hibernating = True
 
-
     if re.search('google', res) and Hibernating == False :
      term = res.replace("google ", "", 1)
      new=2
@@ -166,8 +166,6 @@ while True:
             t2s('Launching: ' + app)
             os.startfile(path)
             Hibernating = True
-
-
 
     if re.search('hello', res) and Hibernating == False :
         li = ['hey', 'hi!', 'hiya!', 'hello', 'yo']
