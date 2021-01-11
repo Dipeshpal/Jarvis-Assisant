@@ -257,12 +257,14 @@ while True:
         response = random.choice(li)
         jarvis(f"I am {response}, thanks, how may I assist you?")
         t2s(f"I am {response}, thanks, how may I assist you?")
+        Hibernating = True
 
     if re.search('whats up', res) and Hibernating == False :
         li = ['I am fantastic, thanks. What can I do for you?']
         response = random.choice(li)
         jarvis(f"{response}")
         t2s(f"{response}")
+        Hibernating = True
 
     if re.search('your name|who are you', res) and Hibernating == False :
         jarvis("My name is JarvisAI, I am your personal assistant.")
@@ -349,6 +351,7 @@ while True:
          except playsound.PlaysoundException :
              jarvis("Uh oh, I can't find the mp3 file.. Please check you have it.")
              t2s("Uh oh, I can't find the mp3 file.. Please check you have it.")
+             Hibernating = True
         else:
             jarvis("Finding path..")
             print("Playing: " + sound)
