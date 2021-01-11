@@ -1,6 +1,4 @@
-# This was made by Syntax 64, I am also making a project based off of JarvisAI, which I will share soon.
-# Jarvis AI extra features for your main.py file.
-
+# This was made by Syntax 64/mgamingpro.
 # Feature 1 : Making it so Jarvis only activates when you say a specific wake word.
 
 # To add this feature, first you will need to add the following code to the very start of the py file:
