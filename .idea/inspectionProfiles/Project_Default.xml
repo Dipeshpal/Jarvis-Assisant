@@ -6,6 +6,18 @@
         <language minSize="724" name="Python" />
       </Languages>
     </inspection_tool>
+<<<<<<< Updated upstream
+=======
+    <inspection_tool class="PyPackageRequirementsInspection" enabled="true" level="WARNING" enabled_by_default="true">
+      <option name="ignoredPackages">
+        <value>
+          <list size="1">
+            <item index="0" class="java.lang.String" itemvalue="JarvisAI" />
+          </list>
+        </value>
+      </option>
+    </inspection_tool>
+>>>>>>> Stashed changes
     <inspection_tool class="PyPep8Inspection" enabled="true" level="WEAK WARNING" enabled_by_default="true">
       <option name="ignoredErrors">
         <list>

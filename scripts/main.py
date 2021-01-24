@@ -13,6 +13,7 @@ def t2s(text):
 while True:
     res = obj.mic_input()
 
+<<<<<<< Updated upstream
     if re.search("jokes|joke|Jokes|Joke", res):
         joke_ = obj.tell_me_joke('en', 'neutral')
         print(joke_)
@@ -29,6 +30,20 @@ while True:
         photos = obj.show_me_my_images()
         print(photos)
 
+=======
+    if re.search('setup|set up', res):
+        setup = obj.setup()
+        print(setup)
+
+    if re.search('google photos', res):
+        photos = obj.show_google_photos()
+        print(photos)
+
+    if re.search('local photos', res):
+        photos = obj.show_me_my_images()
+        print(photos)
+
+>>>>>>> Stashed changes
     if re.search('weather|temperature', res):
         city = res.split(' ')[-1]
         weather_res = obj.weather(city=city)
