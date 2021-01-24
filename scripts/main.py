@@ -11,7 +11,11 @@ def t2s(text):
 
 
 while True:
-    res = obj.mic_input()
+    status, command = obj.hot_word_detect()
+    if status:
+        res = obj.mic_input()
+    else:
+        continue
 
     if re.search("jokes|joke|Jokes|Joke", res):
         joke_ = obj.tell_me_joke('en', 'neutral')
