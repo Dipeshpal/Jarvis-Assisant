@@ -12,10 +12,10 @@ def t2s(text):
 
 while True:
     status, command = obj.hot_word_detect()
-    print(status, command)
     if status:
         while True:
             res = obj.mic_input()
+            print(res)
 
             if re.search("jokes|joke|Jokes|Joke", res):
                 joke_ = obj.tell_me_joke('en', 'neutral')
@@ -53,8 +53,8 @@ while True:
                 break
 
             if re.search('tell me about', res):
-                topic = res.split(' ')[-1]
-                wiki_res = obj.tell_me(topic)
+                topic = res[14:]
+                wiki_res = obj.tell_me(topic, sentences=1)
                 print(wiki_res)
                 t2s(wiki_res)
                 break
