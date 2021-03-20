@@ -19,17 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e54548b4-ade7-4078-88a8-da69c9ee0670" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/Jarvis-Assisant.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Jarvis-Assisant.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/JarvisAI-0.2.6-py3-none-any.whl" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/config/config.ini" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/scripts/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/t.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/tmp.mp3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scripts/utils/wake_up.mp3" beforeDir="false" />
-    </list>
+    <list default="true" id="e54548b4-ade7-4078-88a8-da69c9ee0670" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -249,7 +239,7 @@
       <workItem from="1613924162183" duration="758000" />
       <workItem from="1613968931530" duration="65000" />
       <workItem from="1614147760079" duration="1710000" />
-      <workItem from="1616245663079" duration="1129000" />
+      <workItem from="1616245663079" duration="1903000" />
     </task>
     <servers />
   </component>
@@ -269,10 +259,10 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="516" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1611487660490">
+    <state x="516" y="219" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1616248580360">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state x="516" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1611487660490" />
+    <state x="516" y="219" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1616248580360" />
     <state x="549" y="172" key="FileChooserDialogImpl" timestamp="1613969017141">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
