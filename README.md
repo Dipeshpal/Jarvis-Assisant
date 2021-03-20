@@ -19,10 +19,13 @@ It is recommended to watch both of the below Tutorial because in both of the vid
 
 ### Tutorial 2 (Latest)-
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/C-sKlSULLrI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=C-sKlSULLrI)](https://www.youtube.com/embed/C-sKlSULLrI "Tutorial 2")
+
+
 
 ### Tutorial 1 (Old)-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/LliTjuxDw_o" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=LliTjuxDw_o)](https://www.youtube.com/embed/LliTjuxDw_o "Tutorial 2")
 
 ## Found Bugs?
 * If bug is in JarvisAI library then raise issue here: https://github.com/Dipeshpal/Jarvis_AI/issues
