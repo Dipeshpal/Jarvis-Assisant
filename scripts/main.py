@@ -5,6 +5,8 @@ import random
 
 obj = JarvisAI.JarvisAssistant()
 
+res = obj.setup()
+
 
 def t2s(text):
     obj.text2speech(text)
@@ -14,12 +16,15 @@ while True:
     status, command = obj.hot_word_detect()
     if status:
         while True:
+            # use any one of them
             res = obj.mic_input()
+            # res = obj.mic_input_ai(debug=True)
             print(res)
 
             if re.search("jokes|joke|Jokes|Joke", res):
                 joke_ = obj.tell_me_joke('en', 'neutral')
                 print(joke_)
+                t2s(joke_)
                 break
 
             if re.search('setup|set up', res):
