@@ -6,7 +6,7 @@
 ## Getting started-
 1. Clone the repo.
 2. `pip install -r requirements.txt` to install all requirements, some of the things you may need to install manually so check requirements.txt file.
-If anything is faling then skip that package or try to install that manually by searching on Google about that package. It's not a big deal.
+If anything is failing (or giving error) then skip that package or try to install that manually by searching on Google about that package. It's not a big deal.
 3. Run `main.py` file. `python main.py`
 4. Installation may take time because it uses heavy libraries like Tensorflow and Pytorch with some of the deep learning models. So, if you are limited by data (bandwidth) then this is not for you. *The first time installation will take some time and lots of data.*
 5. Watch *tutorial* and read *usages* for more information from below section.
@@ -44,3 +44,4 @@ Add here: https://github.com/Dipeshpal/Jarvis_AI/discussions
 * https://www.instagram.com/dipesh_pal17
 * https://www.youtube.com/dipeshpal17
 * dipeshpal17@gmail.com
+
