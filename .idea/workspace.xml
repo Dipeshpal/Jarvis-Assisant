@@ -46,6 +46,11 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/JarvisAI/features/hot_word_detection/hot_word_detection.py" root0="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/scripts/JarvisAssistant.py" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/venv/Lib/site-packages/JarvisAI/__init__.py" root0="SKIP_INSPECTION" />
+  </component>
   <component name="JupyterTrust" id="f1f556a7-cb31-40ee-a2f3-aabcdafccace" />
   <component name="ProjectId" id="1mpKrj7KCt2deYaNiMMo1Qbp3xQ" />
   <component name="ProjectLevelVcsManager">
@@ -61,7 +66,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Projects/JarvisAI-API" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -248,6 +253,7 @@
       <workItem from="1618067469392" duration="5386000" />
       <workItem from="1618328189574" duration="2204000" />
       <workItem from="1618333199758" duration="453000" />
+      <workItem from="1618333691907" duration="20000" />
     </task>
     <servers />
   </component>
