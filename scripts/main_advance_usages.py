@@ -8,7 +8,7 @@ import warnings
 warnings.filterwarnings("ignore")
 warnings.warn("second example of warning!")
 
-obj = JarvisAI.JarvisAssistant(token='5ec64be7ff718ac25917c198f3d7a4')
+obj = JarvisAI.JarvisAssistant(sync=True, token='5ec64be7ff718ac25917c198f3d7a4')
 
 
 def t2s(text):
