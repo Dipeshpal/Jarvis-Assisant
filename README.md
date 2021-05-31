@@ -20,13 +20,11 @@ It is recommended to watch both of the below Tutorial because in both of the vid
 
 ### Tutorial 2 (Latest)-
 
-[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=C-sKlSULLrI)](https://www.youtube.com/embed/C-sKlSULLrI "Tutorial 2")
-
-
+[![Everything Is AWESOME](https://user-images.githubusercontent.com/83420185/120128933-b0eba380-c1e0-11eb-8aa1-d781a5189111.png)](https://www.youtube.com/embed/C-sKlSULLrI "Tutorial 2")
 
 ### Tutorial 1 (Old)-
 
-[![Everything Is AWESOME](https://yt-embed.herokuapp.com/embed?v=LliTjuxDw_o)](https://www.youtube.com/embed/LliTjuxDw_o "Tutorial 2")
+[![Everything Is AWESOME](https://user-images.githubusercontent.com/83420185/120129083-fb6d2000-c1e0-11eb-9082-241635b61a80.png)](https://www.youtube.com/embed/LliTjuxDw_o "Tutorial 2")
 
 ## Found Bugs?
 * If bug is in JarvisAI library then raise issue here: https://github.com/Dipeshpal/Jarvis_AI/issues
