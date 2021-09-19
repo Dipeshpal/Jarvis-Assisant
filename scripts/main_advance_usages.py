@@ -8,7 +8,9 @@ import warnings
 warnings.filterwarnings("ignore")
 warnings.warn("second example of warning!")
 
-obj = JarvisAI.JarvisAssistant(sync=True, token='5ec64be7ff718ac25917c198f3d7a4')
+obj = JarvisAI.JarvisAssistant(sync=True, token='5ec64be7ff718ac25917c198f3d7a4', disable_msg=False,
+                               load_chatbot_model=True, high_accuracy_chatbot_model=False,
+                               chatbot_large=False)
 
 
 def t2s(text):
@@ -121,9 +123,10 @@ def start():
 
         if re.search("stop listening|stop", res):
             break
-
-        # else:
-        #     continue
+        else:
+            chatbot_response = obj.chatbot_base(input_text=res)
+            print(chatbot_response)
+            t2s(chatbot_response)
 
 
 if __name__ == "__main__":
