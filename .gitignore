@@ -2,3 +2,4 @@ venv/
 .idea/Jarvis-Assisant.iml
 .idea/misc.xml
 .idea/workspace.xml
+*.xml
