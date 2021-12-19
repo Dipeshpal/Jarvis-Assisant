@@ -9,8 +9,8 @@ warnings.filterwarnings("ignore")
 warnings.warn("second example of warning!")
 
 obj = JarvisAI.JarvisAssistant(sync=True, token='5ec64be7ff718ac25917c198f3d7a4', disable_msg=False,
-                               load_chatbot_model=True, high_accuracy_chatbot_model=False,
-                               chatbot_large=False)
+                               load_chatbot_model=False, high_accuracy_chatbot_model=False,
+                               chatbot_large=False, backend_tts_api='pyttsx3')
 
 
 def t2s(text):
@@ -27,60 +27,59 @@ def start():
                 print("Continue listening, say- 'stop listening to stop continue listening'")
                 res = obj.mic_input()
                 # res = obj.mic_input_ai(debug=True)
-                print(res)
 
                 if re.search("jokes|joke|Jokes|Joke", res):
                     joke_ = obj.tell_me_joke('en', 'neutral')
                     print(joke_)
                     t2s(joke_)
 
-                if re.search('setup|set up', res):
+                elif re.search('setup|set up', res):
                     setup = obj.setup()
                     print(setup)
 
-                if re.search('google photos', res):
+                elif re.search('google photos', res):
                     photos = obj.show_google_photos()
                     print(photos)
 
-                if re.search('local photos', res):
+                elif re.search('local photos', res):
                     photos = obj.show_me_my_images()
                     print(photos)
 
-                if re.search('weather|temperature', res):
+                elif re.search('weather|temperature', res):
                     city = res.split(' ')[-1]
                     weather_res = obj.weather(city=city)
                     print(weather_res)
                     t2s(weather_res)
 
-                if re.search('news', res):
+                elif re.search('news', res):
                     news_res = obj.news()
                     pprint.pprint(news_res)
                     t2s(f"I have found {len(news_res)} news. You can read it. Let me tell you first 2 of them")
                     t2s(news_res[0])
                     t2s(news_res[1])
 
-                if re.search('tell me about', res):
+                elif re.search('tell me about', res):
                     topic = res[14:]
-                    wiki_res = obj.tell_me(topic, sentences=1)
+                    wiki_res = obj.tell_me(topic)
                     print(wiki_res)
                     t2s(wiki_res)
 
-                if re.search('date', res):
+                elif re.search('date', res):
                     date = obj.tell_me_date()
                     print(date)
                     print(t2s(date))
 
-                if re.search('time', res):
+                elif re.search('time', res):
                     time = obj.tell_me_time()
                     print(time)
                     t2s(time)
 
-                if re.search('open', res):
+                elif re.search('open', res):
                     domain = res.split(' ')[-1]
                     open_result = obj.website_opener(domain)
                     print(open_result)
 
-                if re.search('launch', res):
+                elif re.search('launch', res):
                     dict_app = {
                         'chrome': 'C:\Program Files (x86)\Google\Chrome\Application\chrome.exe',
                         'epic games': 'C:\Program Files (x86)\Epic Games\Launcher\Portal\Binaries\Win32\EpicGamesLauncher.exe'
@@ -95,21 +94,21 @@ def start():
                         t2s('Launching: ' + app)
                         obj.launch_any_app(path_of_app=path)
 
-                if re.search('hello|hi', res):
+                elif re.search('hello|hi', res):
                     print('Hi')
                     t2s('Hi')
 
-                if re.search('how are you', res):
+                elif re.search('how are you', res):
                     li = ['good', 'fine', 'great']
                     response = random.choice(li)
                     print(f"I am {response}")
                     t2s(f"I am {response}")
 
-                if re.search('your name|who are you', res):
+                elif re.search('your name|who are you', res):
                     print("I am your personal assistant")
                     t2s("I am your personal assistant")
 
-                if re.search('what can you do', res):
+                elif re.search('what can you do', res):
                     li_commands = {
                         "open websites": "Example: 'open youtube.com",
                         "time": "Example: 'what time it is?'",
@@ -125,7 +124,7 @@ def start():
                     pprint.pprint(li_commands)
                     t2s(ans)
 
-                if re.search("stop listening|stop", res):
+                elif re.search("stop listening|stop", res):
                     break
                 else:
                     chatbot_response = obj.chatbot_base(input_text=res)
