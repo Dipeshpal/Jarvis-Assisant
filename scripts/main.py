@@ -21,12 +21,12 @@ def start():
     while True:
         print("Say your AI name to activate")
         status, command = obj.hot_word_detect()
-        # status = True
         if status:
             while True:
                 # use any one of them
                 print("Continue listening, say- 'stop listening to stop continue listening'")
                 res = obj.mic_input()
+                res = res.lower()
                 # res = obj.mic_input_ai(debug=True)
 
                 if re.search("jokes|joke|Jokes|Joke", res):
@@ -124,11 +124,28 @@ def start():
                     print(ans)
                     pprint.pprint(li_commands)
                     t2s(ans)
+                elif re.search('tech news', res):
+                    obj.show_me_some_tech_news()
+
+                elif re.search('tech videos', res):
+                    obj.show_me_some_tech_videos()
+
+                elif re.search(r"^add *.+ list$", res):
+                    obj.create_new_list(res)
+
+                elif re.search(r"^show *.+ list$", res):
+                    obj.show_me_my_list()
+
+                elif re.search(r"^delete *.+ list$", res):
+                    obj.delete_particular_list(res)
 
                 elif re.search("stop listening|stop", res):
                     break
+
                 else:
-                    chatbot_response = obj.chatbot_base(input_text=res)
+                    chatbot_response = obj.chatbot_base(input_text=res)  # comment this line if you want to use chatbot large
+                    # chatbot_response = obj.chatbot_large(input_text=res) # uncomment this line to use large model for heavy/complex tasks
+
                     print(chatbot_response)
                     t2s(chatbot_response)
         else:
