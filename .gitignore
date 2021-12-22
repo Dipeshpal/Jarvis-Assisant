@@ -7,3 +7,4 @@ venv/
 scripts/configs/JarvisAI-Voice.txt
 .idea/workspace.xml
 *.xml
+*.xml
