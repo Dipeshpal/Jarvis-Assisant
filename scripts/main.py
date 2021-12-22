@@ -8,7 +8,7 @@ import warnings
 warnings.filterwarnings("ignore")
 warnings.warn("second example of warning!")
 
-obj = JarvisAI.JarvisAssistant(sync=False, token='5ec64be7ff718ac25917c198f3d7a4', disable_msg=False,
+obj = JarvisAI.JarvisAssistant(sync=True, token='adc0a911a43f8b5edce4b44f4c8762', disable_msg=False,
                                load_chatbot_model=False, high_accuracy_chatbot_model=False,
                                chatbot_large=False, backend_tts_api='pyttsx3')
 
@@ -20,8 +20,8 @@ def t2s(text):
 def start():
     while True:
         print("Say your AI name to activate")
-        # status, command = obj.hot_word_detect()
-        status = True
+        status, command = obj.hot_word_detect()
+        # status = True
         if status:
             while True:
                 # use any one of them
