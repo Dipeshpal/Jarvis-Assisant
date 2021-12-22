@@ -8,9 +8,10 @@ import warnings
 warnings.filterwarnings("ignore")
 warnings.warn("second example of warning!")
 
-obj = JarvisAI.JarvisAssistant(sync=True, token='5ec64be7ff718ac25917c198f3d7a4', disable_msg=False,
-                               load_chatbot_model=True, high_accuracy_chatbot_model=False,
-                               chatbot_large=False)
+
+obj = JarvisAI.JarvisAssistant(sync=True, token='45c47ca8965327b0d3f3945b725d5a', disable_msg=False,
+                               load_chatbot_model=False, high_accuracy_chatbot_model=False,
+                               chatbot_large=False, backend_tts_api='pyttsx3')
 
 
 def t2s(text):
@@ -130,7 +131,7 @@ def start():
 
 
 if __name__ == "__main__":
-    if not os.path.exists("config/config.ini"):
+    if not os.path.exists("configs/config.ini"):
         res = obj.setup()
         if res:
             print("Settings Saved. Restart your Assistant")
@@ -152,7 +153,7 @@ if __name__ == "__main__":
                 if fingers == [0, 1, 1, 1, 1] and hand_type == 'Left':
                     cv2.destroyAllWindows()
                     cap.release()
-                    city = "Mumbai"
+                    city = "Indore"
                     weather_res = obj.weather(city=city)
                     print(weather_res)
                     t2s(weather_res)
