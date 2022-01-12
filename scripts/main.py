@@ -8,9 +8,9 @@ import warnings
 warnings.filterwarnings("ignore")
 warnings.warn("second example of warning!")
 
-obj = JarvisAI.JarvisAssistant(sync=True, token='b848560382ba0d15819bc2f44ae2eb', disable_msg=False,
-                               load_chatbot_model=False, high_accuracy_chatbot_model=False,
-                               chatbot_large=False, backend_tts_api='pyttsx3')
+obj = JarvisAI.JarvisAssistant(sync=True, token='71dd94xsxsxse48471ec7af2a733acfb', disable_msg=False,
+                               load_chatbot_model=True, high_accuracy_chatbot_model=False,
+                               chatbot_large=True, backend_tts_api='pyttsx3')
 
 
 def t2s(text):
@@ -21,13 +21,15 @@ def start():
     while True:
         print("Say your AI name to activate")
         status, command = obj.hot_word_detect()
+        print(status, command)
         if status:
             while True:
                 # use any one of them
                 print("Continue listening, say- 'stop listening to stop continue listening'")
                 res = obj.mic_input()
-                res = res.lower()
                 # res = obj.mic_input_ai(debug=True)
+                res = res.lower()
+                print("You said: " + res)
 
                 if re.search("jokes|joke|Jokes|Joke", res):
                     joke_ = obj.tell_me_joke('en', 'neutral')
@@ -47,8 +49,9 @@ def start():
                     print(photos)
 
                 elif re.search('weather|temperature', res):
-                    city = res.split(' ')[-1]
-                    weather_res = obj.weather(city=city)
+                    # city = res.split(' ')[-1]
+                    # weather_res = obj.weather(city=city)
+                    weather_res = obj.get_weather(res)
                     print(weather_res)
                     t2s(weather_res)
 
