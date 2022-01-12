@@ -9,7 +9,7 @@ warnings.filterwarnings("ignore")
 warnings.warn("second example of warning!")
 
 
-obj = JarvisAI.JarvisAssistant(sync=True, token='45c47ca8965327b0d3f3945b725d5a', disable_msg=False,
+obj = JarvisAI.JarvisAssistant(sync=True, token='b848560382ba0d15819bc2f44ae2eb', disable_msg=False,
                                load_chatbot_model=False, high_accuracy_chatbot_model=False,
                                chatbot_large=False, backend_tts_api='pyttsx3')
 
