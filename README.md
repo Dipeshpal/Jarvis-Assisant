@@ -40,6 +40,6 @@ Add here: https://github.com/Dipeshpal/Jarvis_AI/discussions
 
 ## Contact me-
 * https://www.instagram.com/dipesh_pal17
-* https://www.youtube.com/dipeshpal17
+* https://www.youtube.com/techportofficial
 * dipeshpal17@gmail.com
 
